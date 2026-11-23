@@ -41,3 +41,5 @@ On an ExLlamaV3 v1.5.3 checkout, `Aleph-Alpha/Kolibri-1.1` reports architecture 
 Preflight validates metadata and inspects the architecture registry. It cannot guarantee that a supported model will quantize correctly. A completed run separately requires a successful converter, finite-logit generation probe, artifact checksum manifest, and (if enabled) TabbyAPI compatibility tests. A smoke test is not a full quality benchmark.
 
 The source code is MIT licensed. Quantized model artifacts remain subject to their original model licenses.
+
+The optional TabbyAPI smoke test refuses to overwrite an existing `config.yml`. Use a separate TabbyAPI checkout for validation to protect your configuration.

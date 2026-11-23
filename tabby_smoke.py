@@ -67,7 +67,10 @@ model:
 sampling:
   override_preset:
 """
-    (tabby/"config.yml").write_text(config)
+    config_path = tabby / "config.yml"
+    if config_path.exists():
+        raise RuntimeError("Refusing to overwrite an existing TabbyAPI config.yml; run the smoke test in a separate TabbyAPI checkout")
+    config_path.write_text(config)
 
     env=os.environ.copy()
     pydev=Path(__file__).resolve().parent/".pydev/root"
@@ -202,6 +205,7 @@ sampling:
             except subprocess.TimeoutExpired:
                 proc.kill()
         logf.close()
+        config_path.unlink(missing_ok=True)
 
 if __name__=="__main__":
     main()

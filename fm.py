@@ -535,8 +535,8 @@ def run_job(job_path):
         if pf["sweet_spot"] == "BLOCKED":
             set_status(repo_id, "BLOCKED", reason="; ".join(pf["reasons"]))
             return 4
-        if pf["exllamav3_arch_supported"] is False:
-            set_status(repo_id, "BLOCKED", reason=f"architecture not found in local ExLlamaV3: {pf['architecture']}")
+        if pf.get("exllamav3_arch_supported") is not True:
+            set_status(repo_id, "BLOCKED", reason=f"architecture support not verified in local ExLlamaV3: {pf['architecture']}")
             return 4
         set_status(repo_id, "DOWNLOADING")
         source = download_source(repo_id, pf["source_revision"])
