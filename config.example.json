@@ -1,0 +1,9 @@
+{
+  "workspace_root": "exl3-first-mover-work",
+  "exllamav3_repo": "/path/to/exllamav3",
+  "tabby_repo": "/path/to/tabbyAPI",
+  "default_devices": [0],
+  "hard_max_b": 40.0,
+  "max_source_gib": 70.0,
+  "tabby_required_for_publish": true
+}

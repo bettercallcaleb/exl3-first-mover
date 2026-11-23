@@ -1,0 +1,11 @@
+{
+  "repo_id": "XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B",
+  "targets": [4.0],
+  "devices": [0],
+  "hq": "auto",
+  "publish": false,
+  "dest_repo": null,
+  "allow_large": false,
+  "allow_unknown_license": false,
+  "probe_tokens": 64
+}
