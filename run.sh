@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
-if [[ "\${1:-}" == "install" ]]; then
+if [[ "${1:-}" == "install" ]]; then
   shift
   exec ./install.sh "$@"
 fi
